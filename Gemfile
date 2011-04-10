@@ -10,4 +10,10 @@ group :development, :test do
 	gem 'sqlite3'
 	gem 'sqlite3-ruby', :require => 'sqlite3'
 	gem 'ruby-debug19', :require => 'ruby-debug'
+	gem 'translate_routes'
+end
+
+
+group :production do
+	gem 'translate_routes'
 end
