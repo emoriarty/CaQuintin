@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Ca Quintín</title>
+  <%= stylesheet_link_tag "style" %>
+  <%= javascript_include_tag "jquery-1.4.min", "loopedslider.min" %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	<!-- Title -->
+	<div id="topbanner">
+		<h1 id="sitename">
+				Ca Quintín
+				<span>restaurant</span>
+		</h1>
+	</div>
+	<!-- Carousel -->
+	<div id="wrap">
+		<div id="header">
+			<div id="slider">	
+				<div class="container">
+					<ul class="slides">
+						<li>
+							<div class="thumbholder">
+								<img src="images/slide1.jpg" width="625" height="254" alt="First Image" /></div>
+								<div class="txtholder">
+		            	<h2>Slide Title</h2>
+		            	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+								</div>
+						</li>
+		        <li>
+							<div class="thumbholder">
+								<img src="images/slide2.jpg" width="625" height="254" alt="First Image" /></div>
+								<div class="txtholder">
+		            	<h2>Slide Title</h2>
+		          		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+								</div>
+						</li>
+		        <li>
+							<div class="thumbholder">
+								<img src="images/slide1.jpg" width="625" height="254" alt="First Image" />
+							</div>
+							<div class="txtholder">
+		            <h2>Slide Title</h2>
+		          	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+							</div>
+						</li>
+		        <li>
+							<div class="thumbholder">
+								<img src="images/slide2.jpg" width="625" height="254" alt="First Image" />
+							</div>
+		          <div class="txtholder">
+		            <h2>Slide Title</h2>
+		            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<ul class="pagination">
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+				</ul>	
+			</div>
+		</div>
+		<!-- Menu -->
+		<div id="menu">
+			<ul>
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Breakfast </a></li>
+				<li><a href="#">Lunch</a></li>
+				<li><a href="#">Order Online</a></li>
+				<li><a href="#">Reservation</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Contact Us</a></li>
+			</ul>
+		</div>
+		<!-- Submenu -->
+		<div id="submenu">
+			<ul>
+				<li><a href="#">What's New?</a></li>
+				<li><a href="#">Today's Specials</a></li>
+				<li><a href="#">Upcoming Events</a></li>
+				<li class="last"><a href="#">Discount Coupons</a></li>
+			</ul>
+		</div>
+		
+		<div id="content">
+			
+			<%= yield %>
+			
+		</div>
+		
+		<div id="footer">
+			&copy; YourCompanyName.com | all Rights Reserved
+			<span class="credit"><a href="http://www.cssheaven.org">Free CSS Template</a> by CSSHeaven</span>
+		</div>
+	</div>
+	<script type="text/javascript" charset="utf-8">
+		$(function(){
+			$('#slider').loopedSlider({
+				autoStart: 3500,
+				restart: 5000
+			});
+
+		});
+	</script>
+</body>
+</html>
