@@ -185,3 +185,8 @@ fr:
 # Menu
   menu:
     cuisine: "cuisine"
+    bookings: ""
+    blog: ""
+    map: "carte"
+    contact: ""
+    about: ""

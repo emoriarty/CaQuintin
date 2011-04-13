@@ -187,3 +187,8 @@
 # Menu
   menu:
     cuisine: "cocina"
+    bookings: "reservas"
+    blog: "blog"
+    map: "mapa"
+    contact: "contactanos"
+    about: "sobre nosotros"

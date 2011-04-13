@@ -175,3 +175,8 @@ ca:
 # Menu
   menu:
     cuisine: "cuina"
+    bookings: "reserves"
+    blog: "blog"
+    map: "mapa"
+    contact: "contactans"
+    about: "sobre nosaltres"
