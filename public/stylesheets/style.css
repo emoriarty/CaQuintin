@@ -44,6 +44,10 @@ h1#sitename span {display:block; font:bold 12px "Trebuchet MS", Arial, Helvetica
 #submenu li.last a { border:none!important;}
 #submenu li a:hover {color:#222;}
 #content {background:url(images/sidebarbg.gif) left top repeat-y; padding-top:15px;}
+	.left {width:435px; float:left; padding-right:29px;border-right:1px dotted #957f80;}
+	.right {width:435px; float:left; padding-left:30px;}
+
+
 #sidebar1 {float:left; width:250px; position:relative;}
 #maincontent {float:right; width:660px; position:relative;}
 #sidebar1 .hotimg {width:250px; margin:auto; position:relative; padding-top:5px; margin-bottom:10px;}
@@ -59,6 +63,6 @@ h1#sitename span {display:block; font:bold 12px "Trebuchet MS", Arial, Helvetica
 img.leftalign, img.rightalign {padding:8px; border:solid 1px #ddd; background:#eee; display:block;}
 .leftalign {float:left; margin-right:10px;}
 .rightalign {float:right; margin-left:10px;}
-#footer {background:url(/images/topbg.jpg) repeat-x; padding:35px; text-align:center; color:#fff;}
+#footer {padding:35px; text-align:center; color:#fff;}
 #footer a { color:#fff; text-decoration:none;}
 .credit {font-size:10px; display:block;}
