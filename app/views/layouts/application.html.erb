@@ -68,24 +68,42 @@
 		<!-- Menu -->
 		<div id="menu">
 			<ul>
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#"><%= (I18n.t "menu.cuisine").capitalize %></a></li>
-				<li><a href="#"><%= (I18n.t "menu.blog").capitalize %></a></li>
-				<li><a href="#"><%= (I18n.t "menu.bookings").capitalize %></a></li>
-				<li><a href="#"><%= (I18n.t "menu.map").capitalize %></a></li>
-				<li><a href="#"><%= (I18n.t "menu.about").capitalize %></a></li>
-				<li><a href="#"><%= (I18n.t "menu.contact").capitalize %></a></li>
+				<li <%= 'class=active' if WelcomeController.name.underscore.start_with? params[:controller] %>>
+					<%= link_to 'Home' , root_path %>
+				</li>
+				<li <%= 'class=active' if CuisineController.name.underscore.start_with? params[:controller]  %>>
+					<%= link_to (I18n.t "menu.cuisine").capitalize , :controller => :cuisine %>
+				</li>
+				<li>
+					<a href="#"><%= (I18n.t "menu.blog").capitalize %></a>
+				</li>
+				<li <%= 'class=active' if BookController.name.underscore.start_with? params[:controller]  %>>
+					<%= link_to (I18n.t "menu.bookings").capitalize, :controller => :book %>
+				</li>
+				<li <%= 'class=active' if MapController.name.underscore.start_with? params[:controller]  %>>
+					<%= link_to (I18n.t "menu.map").capitalize, :controller => :map %>
+				</li>
+				<li <%= 'class=active' if AboutController.name.underscore.start_with? params[:controller]  %>>
+					<%= link_to (I18n.t "menu.about").capitalize, :controller => :about %>
+				</li>
+				<li <%= 'class=active' if ContactController.name.underscore.start_with? params[:controller]  %>>
+					<%= link_to (I18n.t "menu.contact").capitalize, :controller => :contact %>
+				</li>
 			</ul>
 		</div>
-		<!-- Submenu 
-		<div id="submenu">
-			<ul>
-				<li><a href="#">What's New?</a></li>
-				<li><a href="#">Today's Specials</a></li>
-				<li><a href="#">Upcoming Events</a></li>
-				<li class="last"><a href="#">Discount Coupons</a></li>
-			</ul>
-		</div>-->
+		<% if CuisineController.name.underscore.start_with? params[:controller] %>
+			<!--Submenu--> 
+			<div id="submenu">
+				<ul>
+					<li><a href="#">Entrantes</a></li>
+					<li><a href="#">Carnes</a></li>
+					<li><a href="#">Pescados</a></li>
+					<li><a href="#">Arroces</a></li>
+					<li><a href="#">Vinos</a></li>
+					<li class="last"><a href="#">Postres</a></li>
+				</ul>
+			</div>
+		<% end %>
 		
 		<div id="content">
 			
@@ -93,6 +111,7 @@
 			
 		</div>
 		
+		</div>
 		<div id="footer">
 			&copy; YourCompanyName.com | all Rights Reserved
 			<span class="credit"><a href="http://www.cssheaven.org">Free CSS Template</a> by CSSHeaven</span>

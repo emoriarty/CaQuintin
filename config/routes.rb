@@ -1,4 +1,14 @@
 CaQuintin::Application.routes.draw do
+  get "contact", :controller => 'contact', :action => 'index'
+
+  get "about", :controller => 'about', :action => 'index'
+
+  get "map", :controller => 'map', :action => 'index'
+
+  get "book", :controller => 'book', :action => 'index'
+
+  get "cuisine", :controller => 'cuisine', :action => 'index'
+
   get "welcome/index"
 
   # The priority is based upon order of creation:
