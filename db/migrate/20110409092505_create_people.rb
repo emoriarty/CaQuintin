@@ -1,12 +1,14 @@
 class CreatePeople < ActiveRecord::Migration
   def self.up
     create_table :people do |t|
+      t.string :user_id
       t.string :name
       t.string :surname1
       t.string :surname2
       t.string :email
       t.string :phone
       t.string :mobile
+      t.string :nick 
       t.string :password
       t.string :salt
       t.string :type

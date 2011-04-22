@@ -13,6 +13,8 @@ group :development, :test do
 	gem 'ruby-debug19', :require => 'ruby-debug'
 	gem 'translate_routes'
 	gem "mongrel", '>= 1.2.0.pre2'
+	gem 'rspec-rails', '2.5.0'
+	gem 'annotate-models', '1.0.4'
 end
 
 

@@ -19,26 +19,7 @@
 #  updated_at :datetime
 #
 
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  name: MyString
-  surname1: MyString
-  surname2: MyString
-  email: MyString
-  phone: MyString
-  mobile: MyString
-  password: MyString
-  salt: MyString
-  type: MyString
-
-two:
-  name: MyString
-  surname1: MyString
-  surname2: MyString
-  email: MyString
-  phone: MyString
-  mobile: MyString
-  password: MyString
-  salt: MyString
-  type: MyString
+class User < Person
+  validates :password, :presence => true
+  validates :nick, :presence => true
+end

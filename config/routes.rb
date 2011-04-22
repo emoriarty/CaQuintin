@@ -1,4 +1,11 @@
 CaQuintin::Application.routes.draw do
+  
+  get "admin/login", :controller => 'admin/home', :action => 'login'
+    
+  namespace :admin do
+    resources :bookings, :users
+  end
+
   get "contact", :controller => 'contact', :action => 'index'
 
   get "about", :controller => 'about', :action => 'index'
