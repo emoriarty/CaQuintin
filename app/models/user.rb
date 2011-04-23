@@ -26,7 +26,7 @@ class User < Person
   
   validates :password,
     :presence => true,
-    :confirmation => true
+    :confirmation => true,
     :length       => { :within => 6..40 }
   validates :nick, 
     :presence => true,
