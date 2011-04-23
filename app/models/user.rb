@@ -20,6 +20,16 @@
 #
 
 class User < Person
-  validates :password, :presence => true
-  validates :nick, :presence => true
+  attr_accessor :password
+  attr_accessible :name, :surname1, :surname2, :email, :password, :password_confirmation
+  
+  
+  validates :password,
+    :presence => true,
+    :confirmation => true
+    :length       => { :within => 6..40 }
+  validates :nick, 
+    :presence => true,
+    :length => { :minimum => 1, :maximum => 25 },
+    :uniqueness => { :case_sensitive => false }
 end

@@ -20,6 +20,15 @@
 #
 
 class Person < ActiveRecord::Base
-  validates :name, :presence => true
-  validates :email, :presence => true
+  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  
+  validates :name, :presence => true,
+    :length => { :maximum => 50 }
+  validates :surname1, :presence => true,
+    :length => { :maximum => 75 }          
+  validates :surname2, :presence => true,
+    :length => { :maximum => 75 }
+  validates :email, :presence => true,
+    :format   => { :with => email_regex },
+    :uniqueness => { :case_sensitive => false }
 end

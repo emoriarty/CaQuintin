@@ -185,8 +185,8 @@ fr:
 # Menu
   menu:
     cuisine: "cuisine"
-    bookings: ""
-    blog: ""
+    bookings: "PENDING TRANSLATE"
+    blog: "PENDING TRANSLATE"
     map: "carte"
-    contact: ""
-    about: ""
+    contact: "PENDING TRANSLATE"
+    about: "PENDING TRANSLATE"

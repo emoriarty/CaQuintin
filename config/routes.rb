@@ -1,6 +1,8 @@
 CaQuintin::Application.routes.draw do
   
-  get "admin/login", :controller => 'admin/home', :action => 'login'
+  get "admin", :controller => 'admin/home', :action => 'index'
+  
+  match "admin/login" => "admin/home#login", :as => :login
     
   namespace :admin do
     resources :bookings, :users

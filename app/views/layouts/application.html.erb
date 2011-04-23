@@ -116,6 +116,7 @@
 			&copy; YourCompanyName.com | all Rights Reserved
 			<span class="credit"><a href="http://www.cssheaven.org">Free CSS Template</a> by CSSHeaven</span>
 		</div>
+		<%= debug(params) if Rails.env.development? %>
 	</div>
 	<script type="text/javascript" charset="utf-8">
 		$(function(){
@@ -126,5 +127,6 @@
 
 		});
 	</script>
+	
 </body>
 </html>
