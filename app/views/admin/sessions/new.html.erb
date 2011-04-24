@@ -1,0 +1,23 @@
+<% if flash %>
+
+<div style="padding:5px;color:red;boder-style:1px solid red;"><%= flash[:error] %></div>
+
+<% end %>
+
+<h1>Sign in</h1>
+
+<%= form_for(:session, :url => admin_sessions_path) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit I18n.t("admin.sessions.new.title") %>
+  </div>
+<% end %>
+
+		<%= debug(params) if Rails.env.development? %>

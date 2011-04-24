@@ -195,3 +195,13 @@
     
 #Users
   users: "algo"
+  
+#Admin
+  admin:
+    sessions:
+      new:
+        title: "acceder"
+      create:
+        errors:
+          invalid_user_password: 'inválida combinación de email/contraseña'
+        

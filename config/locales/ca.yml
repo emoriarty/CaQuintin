@@ -180,3 +180,8 @@ ca:
     map: "mapa"
     contact: "contactans"
     about: "sobre nosaltres"
+#Admin
+  admin:
+    sessions:
+      new:
+        title: "accedir"

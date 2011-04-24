@@ -194,3 +194,9 @@ en:
     map: "map"
     contact: "contact us"
     about: "about us"
+
+#Admin
+  admin:
+    sessions:
+      new:
+        title: "sing in"

@@ -190,3 +190,9 @@ fr:
     map: "carte"
     contact: "PENDING TRANSLATE"
     about: "PENDING TRANSLATE"
+
+#Admin
+  admin:
+    sessions:
+      new:
+        title: "entrer"

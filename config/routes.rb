@@ -1,12 +1,17 @@
 CaQuintin::Application.routes.draw do
   
-  get "admin", :controller => 'admin/home', :action => 'index'
-  
-  match "admin/login" => "admin/home#login", :as => :login
-    
   namespace :admin do
     resources :bookings, :users
+    resources :sessions, :only => [:new, :create, :destroy]
   end
+  
+  get "admin", :controller => 'admin/home', :action => 'index'
+  
+  match 'admin/signin', :to => "admin/sessions#new"
+  match 'admin/signout', :to => "admin/sessions#destroy"
+  match "admin/login" => "admin/home#login", :as => :login
+    
+  
 
   get "contact", :controller => 'contact', :action => 'index'
 
