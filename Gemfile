@@ -15,6 +15,7 @@ group :development, :test do
 	gem "mongrel", '>= 1.2.0.pre2'
 	gem 'rspec-rails', '2.5.0'
 	gem 'annotate-models', '1.0.4'
+	gem 'web-app-theme', '>= 0.6.2'
 end
 
 

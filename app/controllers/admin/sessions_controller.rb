@@ -1,23 +1,23 @@
 class Admin::SessionsController < ApplicationController
-  
+  layout "login"
   def new
-    render :layout => false
   end
   
   def create
-    user = User.find_by_email(params[:session][:email], params[:session][:password])
-    
+    user = User.authenticate(params[:session][:email], params[:session][:password])
+
     if user.nil?
       flash.now[:error] = I18n.t("admin.sessions.create.errors.invalid_user_password").capitalize
-      render 'new', :layout => false
+      render 'new'
     else
-      
+      sign_in user
+      redirect_to admin_users_url
     end
-    
-    
   end
   
   def destroy
+    log_out
+    redirect_to admin_path
   end
 
 end

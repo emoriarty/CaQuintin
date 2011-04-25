@@ -1,23 +1,37 @@
-<% if flash %>
-
-<div style="padding:5px;color:red;boder-style:1px solid red;"><%= flash[:error] %></div>
-
-<% end %>
-
-<h1>Sign in</h1>
-
-<%= form_for(:session, :url => admin_sessions_path) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+<div class="block" id="block-login">
+	<h2><%= "#{I18n.t('title')} - #{I18n.t('admin.login').capitalize}" %></h2>
+  <div class="content login">
+		<% if flash[:error] %>
+    	<div class="flash">
+	      <div class="message error">
+	        <p><%= flash[:error] %></p>
+	      </div>
+	    </div>
+		<% end %>
+		<%= form_for :session, :url => admin_sessions_path, :html => {:class => "form login"} do |f| %>
+			<div class="group wat-cf">
+				<div class="left">
+					<%= f.label :email, :class => "label right" %>
+		    </div>
+		    <div class="right">
+			    <%= f.text_field :email, :class => "text_field" %>
+		    </div>
+		  </div>
+			<div class="group wat-cf">
+		    <div class="left">
+					<%= f.label :password, :class => "label right" %>
+		    </div>
+		    <div class="right">
+					<%= f.password_field :password, :class => "text_field" %>
+		    </div>
+		  </div>
+			<div class="group navform wat-cf">
+		    <div class="right">
+		      <button class="button" type="submit">
+		        <img src="images/icons/key.png" alt="Save"> <%= I18n.t("admin.login") %>
+		      </button>
+		    </div>
+		  </div>
+		<% end %>
   </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="actions">
-    <%= f.submit I18n.t("admin.sessions.new.title") %>
-  </div>
-<% end %>
-
-		<%= debug(params) if Rails.env.development? %>
+</div>

@@ -5,11 +5,9 @@ CaQuintin::Application.routes.draw do
     resources :sessions, :only => [:new, :create, :destroy]
   end
   
-  get "admin", :controller => 'admin/home', :action => 'index'
-  
-  match 'admin/signin', :to => "admin/sessions#new"
-  match 'admin/signout', :to => "admin/sessions#destroy"
-  match "admin/login" => "admin/home#login", :as => :login
+  match "admin", :to => "admin/users#index"
+  match 'admin/login', :to => "admin/sessions#new"
+  match 'admin/logout', :to => "admin/sessions#destroy"
     
   
 

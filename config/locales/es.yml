@@ -183,7 +183,7 @@
       full_messages:
         format: "%{attribute}%{message}"
 
-
+  title: "Ca Quintín"
 # Menu
   menu:
     cuisine: "cocina"
@@ -198,6 +198,10 @@
   
 #Admin
   admin:
+    login: "acceder al sistema"
+    logout: "salir del sistema"
+    profile: "perfil"
+    settings: "preferencias"
     sessions:
       new:
         title: "acceder"
