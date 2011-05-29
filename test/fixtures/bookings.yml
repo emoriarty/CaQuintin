@@ -1,15 +1,15 @@
 # == Schema Information
-# Schema version: 20110422190938
+# Schema version: 20110529143324
 #
 # Table name: bookings
 #
 #  id            :integer         not null, primary key
-#  user_id       :integer
 #  people_number :integer
 #  date          :date
-#  time          :time
 #  created_at    :datetime
 #  updated_at    :datetime
+#  client_id     :integer
+#  time          :time
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

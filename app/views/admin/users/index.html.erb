@@ -1,2 +1,53 @@
-<h1>Admin::Users#index</h1>
-<p>Find me in app/views/admin/users/index.html.erb</p>
+<div class="block" id="block-tables">
+	<div class="content">
+		<div class="secondary-navigation">
+			<ul class="wat-cf activate">
+				<li class="first">
+					<a href="#">Pendientes</a>
+				</li>
+				<li class="">
+					<a href="#">Todas</a>
+				</li>
+				<li>
+					<a href="#">Pasadas</a>
+				</li>
+			</ul>
+		</div>
+		<h2>Reservas</h2>
+		<div class="inner">
+			<table class="table">
+				<tbody>
+					<tr>
+						<th class="first"><%= check_box_tag( :class => "checkbox toggle" ) %></th>
+						<th><%= I18n.t("admin.tables.bookings.date") %></th>
+						<th><%= I18n.t("admin.tables.bookings.time") %></th>
+						<th><%= I18n.t("admin.tables.bookings.name") %></th>
+						<th><%= I18n.t("admin.tables.bookings.surname") %></th>
+						<th><%= I18n.t("admin.tables.bookings.mobile") %></th>
+						<th><%= I18n.t("admin.tables.bookings.email") %></th>
+					</tr>
+				<% @bookings.each do |booking| %>
+					<tr class="<%= %>">
+						<td><%= check_box_tag( :class => "checkbox toggle" ) %></td>
+						<td><%= booking.date %></td>
+						<td><%= booking.date %></td>
+						<td><%= booking.client ? booking.client.name : "---" %></td>
+						<td><%= booking.client ? booking.client.surname1 : "---" %></td>
+						<td><%= booking.client ? booking.client.mobile : "---" %></td>
+						<td><%= booking.client ? booking.client.email : "---" %></td>
+					</tr>
+				<% end %>
+				</tbody>
+			</table>
+			<div class="actions-bar wat-cf">
+				<div class="actions">
+					<button class="button">
+						<%= image_tag( "admin/icons/cross.png" %><%= I18n.t("admin.delete").capitalize ) %>
+					</button>
+				</div>
+				<div class="pagination">
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>

@@ -4,6 +4,7 @@ class Admin::UsersController < ApplicationController
   def index
     
     if sign_in?
+      @bookings = Booking.find(:all)
     else
       redirect_to :admin_login
     end

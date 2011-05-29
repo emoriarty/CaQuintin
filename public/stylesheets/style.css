@@ -4,7 +4,7 @@ ul {list-style:none;}
 h1, h2, h3, h4 {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;}
 
 /*html {display:block; height:100%; width:100%; background:url(/images/htmlbg.jpg) repeat;}*/
-body {background:url(/images/topbg_green.jpg) left top repeat-x; font: 12px Verdana, Geneva, sans-serif; color:#808080;background-color:#f8ecdc;}
+body {background:url(/images/topbg_green.jpg) left top repeat-x; font-size: 12px; font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif; color:#808080;background-color:#f8ecdc;}
 #wrap { width:930px; padding:15px; background:#fefefd; margin:auto;}
 #topbanner {width:960px; margin:0 auto 0 auto; height:90px;}
 #header {background:url(/images/mainheaderbg.jpg) left bottom repeat-x; margin-bottom:3px; position:relative;}
@@ -52,6 +52,7 @@ h1#sitename span {display:block; font:bold 12px "Trebuchet MS", Arial, Helvetica
 #content div#dishes {float: left;padding-top: 10px;border-top: 3px solid #acd55f;width: 612px;}
 #content div#dishes h2 {margin-bottom: 10px; letter-spacing:2px;}
 #content div#dishes ul {padding:0 10px;}
+
 #content div#dishes li {padding: 0 0 10px 0; letter-spacing:2px;}
 #content div#dishes li span {float:right;}
 #content img#dishes {float: left;margin-right: 25px;padding-top: 10px;border-top: 3px solid #acd55f;width: 290px;}
@@ -78,4 +79,87 @@ img.leftalign, img.rightalign {padding:8px; border:solid 1px #ddd; background:#e
 #footer a { color:#fff; text-decoration:none;}
 .credit {font-size:10px; display:block;}
 
+/* BOOKING FORM */
+.booking_form{text-align: left;margin: 0px auto;width: 900px;min-height: 300px;padding:14px;}
+.booking_form div#booking_calendar{float: left}
+.booking_form div.fields{float: left;width:350px;}
 
+.myform{
+margin:0 auto;
+width:400px;
+padding:14px;
+}
+
+#stylized{
+border:solid 2px #ACD55F;
+background:#f8f0e5;
+}
+#stylized h1 {
+font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+}
+#stylized p{
+font-size:11px;
+color:#666666;
+margin-bottom:20px;
+border-bottom:solid 1px #ACD55F;
+padding-bottom:10px;
+}
+#stylized label{
+display:block;
+font-weight:bold;
+text-align:right;
+width:145px;
+float:left;
+margin: 2px 0 15px 10px;
+}
+#stylized .small{
+color:#666666;
+display:block;
+font-size:11px;
+font-weight:normal;
+text-align:right;
+width:140px;
+}
+#stylized input{
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #ACD55F;
+width:163px;
+margin:2px 0 15px 10px;
+}
+#stylized span.select{
+float:left;
+width:169px;
+margin:2px 0 15px 10px;
+}
+#stylized button{
+clear:both;
+margin-left:150px;
+width:125px;
+height:31px;
+background:#666666 url(img/button.png) no-repeat;
+text-align:center;
+line-height:31px;
+color:#FFFFFF;
+font-size:11px;
+font-weight:bold;
+}
+/* END BOOKING FORM */
+
+/* Error partial*/
+#errorExplanation{
+	border:1px solid red;
+	color:red;
+	background-color:white;
+}
+#errorExplanation h2{
+	background-color:red;
+	color:white;
+	font-size:normal;
+}
+#errorExplanation ul{
+	padding:5px;
+}

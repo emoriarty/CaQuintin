@@ -1,0 +1,13 @@
+<% if target.errors.any? %>  
+	<div id="errorExplanation">
+	  <h2>Han ocurrido los siguientes errores</h2>
+	  <ul>  
+	  <% target.errors.full_messages.each do |msg| %>  
+	    <li><%= msg %></li>  
+	  <% end %> 
+		<% target.client.errors.full_messages.each do |msg| %>  
+	    <li><%= msg %></li>  
+	  <% end %>
+	  </ul>  
+	</div>  
+<% end %>

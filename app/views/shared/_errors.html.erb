@@ -1,0 +1,5 @@
+<% if target.errors.any? %>
+	<%= render "shared/active_record_errors_messages", :target => target %>
+<% elsif flash[:error] %>
+	<%= render "shared/flash_errors_messages" %>
+<% end %>

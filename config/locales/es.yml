@@ -132,6 +132,8 @@
       hour:   "Hora"
       minute: "Minutos"
       second: "Segundos"
+    errors:
+      invalid: "Fecha inválida"
 
   helpers:
     select:
@@ -165,8 +167,26 @@
       less_than_or_equal_to: "debe ser menor que o igual a %{count}"
       odd: "debe ser impar"
       even: "debe ser par"
+      header: "Han ocurrido los siguientes errores"
 
   activerecord:
+    models:
+      booking: 'reserva'
+      client: 'cliente'
+    attributes:
+      booking:
+        people_number: 'número de personas'
+        date: 'fecha'
+        time: 'hora'
+      client:
+        client: 'cliente'
+        name: 'nombre'
+        surname1: '1º apellido'
+        surname2: '2º apellido'
+        email: 'correo electrónico'
+        phone: 'teléfono fijo'
+        mobile: 'teléfono portátil'
+        
     errors:
       template:
         header:
@@ -192,7 +212,25 @@
     map: "mapa"
     contact: "contactanos"
     about: "sobre nosotros"
-    
+
+#booking
+  booking:
+    messages:
+      success: "se ha registrado con éxito su reserva"
+    fields:
+      name: 'nombre'
+      hour: 'hora'
+      select_time: 'selecciona una hora'
+      minutes: 'minutos'
+      surname1: '1º apellido'
+      surname2: '2º apellido'
+      phone: 'teléfono fijo'
+      mobile: 'teléfono móvil'
+      email: 'correo electrónico'
+      people_number: 'número de personas'
+    buttons:
+      book: 'reservar'
+      
 #Users
   users: "algo"
   
@@ -200,6 +238,7 @@
   admin:
     login: "acceder al sistema"
     logout: "salir del sistema"
+    delete: "borrar"
     profile: "perfil"
     settings: "preferencias"
     sessions:
@@ -208,4 +247,14 @@
       create:
         errors:
           invalid_user_password: 'inválida combinación de email/contraseña'
+    tables:
+      bookings:
+        date: "fecha"
+        time: "hora"
+        people_number: "nº de personas"
+        name: "nombre"
+        surname: "apellido"
+        mobile: "móvil"
+        email: "correo electrónico"
+        
         

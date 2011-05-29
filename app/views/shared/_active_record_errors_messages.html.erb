@@ -1,0 +1,11 @@
+<div id="errorExplanation">
+  <h2><%= I18n.t "errors.messages.header" %></h2>
+  <ul>
+  <% target.errors.full_messages.each do |msg| %>  
+    <li><%= msg %></li>  
+  <% end %> 
+	<% target.client.errors.full_messages.each do |msg| %>  
+    <li><%= msg %></li>  
+  <% end %>
+  </ul>  
+</div>

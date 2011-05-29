@@ -19,26 +19,25 @@
 #  encrypted_password :string(255)
 #
 
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  surname1: MyString
-  surname2: MyString
-  email: MyString
-  phone: MyString
-  mobile: MyString
-  password: MyString
-  salt: MyString
-  type: MyString
-
-two:
-  name: MyString
-  surname1: MyString
-  surname2: MyString
-  email: MyString
-  phone: MyString
-  mobile: MyString
-  password: MyString
-  salt: MyString
-  type: MyString
+class Client < Person
+  attr_accessible :name, :surname1, :surname2, :email, :phone, :mobile
+  has_many :bookings
+  
+  accepts_nested_attributes_for :bookings
+  
+  validates :phone,
+    :length => { :minimum => 9, :maximum => 12 },
+    :allow_blank => true
+  
+  validates :mobile,
+    :presence => true,
+    :length => { :minimum => 9, :maximum => 12 }
+  
+  validates :email, :presence => true,
+    :format => { :with => EMAIL_REGEX }
+    
+  def save_with_no_validation
+    self.save(false)
+  end
+end

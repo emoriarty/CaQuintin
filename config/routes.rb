@@ -9,15 +9,13 @@ CaQuintin::Application.routes.draw do
   match 'admin/login', :to => "admin/sessions#new"
   match 'admin/logout', :to => "admin/sessions#destroy"
     
-  
+  resources :booking, :only => [:index, :create]
 
   get "contact", :controller => 'contact', :action => 'index'
 
   get "about", :controller => 'about', :action => 'index'
 
   get "map", :controller => 'map', :action => 'index'
-
-  get "book", :controller => 'book', :action => 'index'
 
   get "cuisine", :controller => 'cuisine', :action => 'index'
 

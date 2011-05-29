@@ -1,10 +1,9 @@
 # == Schema Information
-# Schema version: 20110424164921
+# Schema version: 20110516190638
 #
 # Table name: people
 #
 #  id                 :integer         not null, primary key
-#  user_id            :string(255)
 #  name               :string(255)
 #  surname1           :string(255)
 #  surname2           :string(255)

@@ -4,7 +4,15 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>Ca Quintín</title>
   <%= stylesheet_link_tag "style" %>
-  <%= javascript_include_tag "jquery-1.4.min", "loopedslider.min" %>
+	<%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/themes/smoothness/jquery-ui.css" %>
+	<%#= javascript_include_tag :all, :recursive => true %>
+	<%#= javascript_include_tag "jquery-1.4.min" %>
+	<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js",
+		 "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js" %>
+	<%= javascript_include_tag "http://jquery-ui.googlecode.com/svn/trunk/ui/i18n/jquery.ui.datepicker-es.js" %>
+	<%= javascript_include_tag "application" %>
+	<%= javascript_include_tag "loopedslider.min" %>
+	<%= javascript_include_tag "prototype" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -77,8 +85,8 @@
 				<li>
 					<a href="#"><%= (I18n.t "menu.blog").capitalize %></a>
 				</li>
-				<li <%= 'class=active' if BookController.name.underscore.start_with? params[:controller]  %>>
-					<%= link_to (I18n.t "menu.bookings").capitalize, :controller => :book %>
+				<li <%= 'class=active' if BookingController.name.underscore.start_with? params[:controller]  %>>
+					<%= link_to (I18n.t "menu.bookings").capitalize, booking_index_path %>
 				</li>
 				<li <%= 'class=active' if MapController.name.underscore.start_with? params[:controller]  %>>
 					<%= link_to (I18n.t "menu.map").capitalize, :controller => :map %>
@@ -104,23 +112,22 @@
 				</ul>
 			</div>
 		<% end %>
-		
 		<div id="content">
 			
 			<%= yield %>
 			
 		</div>
+	</div>
 		
-		</div>
-		<div id="footer">
+	<div id="footer">
 			&copy; YourCompanyName.com | all Rights Reserved
 			<span class="credit"><a href="http://www.cssheaven.org">Free CSS Template</a> by CSSHeaven</span>
 		</div>
 		<%= debug(params) if Rails.env.development? %>
 	</div>
 	<script type="text/javascript" charset="utf-8">
-		$(function(){
-			$('#slider').loopedSlider({
+		jQuery(function(){
+			jQuery('#slider').loopedSlider({
 				autoStart: 3500,
 				restart: 5000
 			});
