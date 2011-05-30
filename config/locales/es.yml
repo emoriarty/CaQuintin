@@ -4,6 +4,13 @@
 #  - Tsutomu Kuroda - http://github.com/kuroda (t-kuroda@oiax.jp)
 
 "es":
+  views:
+    pagination:
+      previous: "&lt; anterior"
+      next: "siguiente &gt;"
+      truncate: "..."
+      first: "primera"
+      last: "última"
   date:
     formats:
       default: "%d/%m/%Y"

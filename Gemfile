@@ -5,6 +5,7 @@ gem 'heroku'
 gem 'sqlite3'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'translate_routes'
+gem 'kaminari'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators

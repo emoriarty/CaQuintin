@@ -43,6 +43,8 @@ GEM
       launchy (~> 0.3.2)
       rest-client (>= 1.4.0, < 1.7.0)
     i18n (0.5.0)
+    kaminari (0.12.4)
+      rails (>= 3.0.0)
     launchy (0.3.7)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
@@ -132,6 +134,7 @@ PLATFORMS
 DEPENDENCIES
   annotate-models (= 1.0.4)
   heroku
+  kaminari
   mongrel (>= 1.2.0.pre2)
   rails (= 3.0.6)
   rspec-rails (= 2.5.0)

@@ -30,7 +30,7 @@
 					<tr class="<%= %>">
 						<td><%= check_box_tag( :class => "checkbox toggle" ) %></td>
 						<td><%= booking.date %></td>
-						<td><%= booking.date %></td>
+						<td><%= booking.time %></td>
 						<td><%= booking.client ? booking.client.name : "---" %></td>
 						<td><%= booking.client ? booking.client.surname1 : "---" %></td>
 						<td><%= booking.client ? booking.client.mobile : "---" %></td>
@@ -45,8 +45,8 @@
 						<%= image_tag( "admin/icons/cross.png" %><%= I18n.t("admin.delete").capitalize ) %>
 					</button>
 				</div>
-				<div class="pagination">
-				</div>
+
+				<%= paginate @bookings %>
 			</div>
 		</div>
 	</div>	

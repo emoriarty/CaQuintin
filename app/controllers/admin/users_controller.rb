@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
   def index
     
     if sign_in?
-      @bookings = Booking.find(:all)
+      @bookings = Booking.order(:date, :time).page(params[:page]).per(10)
     else
       redirect_to :admin_login
     end

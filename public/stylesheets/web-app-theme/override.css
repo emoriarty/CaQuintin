@@ -1,1 +1,16 @@
 /* Override here any style defined by web-app-theme */
+
+/* Pagination */
+
+.pagination span.page a, .pagination span.next a, .pagination span.last a, 
+.pagination span.last a span, .pagination span.first a, .pagination span.first a span, 
+.pagination span.prev a {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	background: transparent;
+}
+
+.pagination span:hover {
+	background: #DEDEDE;
+}
