@@ -2,43 +2,37 @@
 	<h1>Reserva su mesa</h1>
 	<p>Seleccione una fecha y una hora, y no olvide rellenar el resto de campos marcados con un *</p>
 	<%= form_for @booking, :as => :booking, :url => booking_index_path, :method => :post do |b| %>
-			<%= render "shared/errors", :target => @booking %>
-			<!-- booking date -->
-			<div id="booking_calendar" type="text"></div>
-			<%= b.hidden_field :date %>
-				<!-- booking time -->
-				<%= b.label :time, "#{ I18n.t('booking.fields.select_time') } *" %>
-				<span class="select">
-				<%= b.time_select :time, :minute_step => 15 %>
-				</span>
-				<!-- booking people -->
-				<%= b.label :people_number, "#{ I18n.t('booking.fields.people_number') }*" %>
-				<span class="select">
-					<%= b.select :people_number, 2..10 %>
-				</span>
-				<!-- booking client -->
-				<%= b.fields_for :client do |c| %>
-					<!-- client name-->
-					<%= c.label :name, "#{ I18n.t('booking.fields.name') } *" %>
-					<%= c.text_field :name %>
-					<%#= c.error_messages_on :name %>
-					<!-- surname1 -->
-					<%= c.label :surname1, "#{ I18n.t('booking.fields.surname1') } *" %>
-					<%= c.text_field :surname1 %>
-					<!-- surname2 -->
-					<%= c.label :surname2, I18n.t( "booking.fields.surname2" ) %>
-					<%= c.text_field :surname2 %>
-					<!-- mobile -->
-					<%= c.label :mobile, "#{ I18n.t('booking.fields.mobile') } *" %>
-					<%= c.text_field :mobile %>
-					<!-- phone -->
-					<%= c.label :phone, I18n .t( "booking.fields.phone" ) %>
-					<%= c.text_field :phone %>
-					<!-- email -->
-					<%= c.label :email, "#{ I18n.t('booking.fields.email') } *" %>
-					<%= c.text_field :email %>
-				<% end %>
-				<button type="submit">Reservar</button>
-				<div class="spacer"></div>
+		<%= render "shared/errors", :target => @booking %>
+		<!-- booking date -->
+		<div id="booking_calendar" type="text"></div>
+		<%= b.hidden_field :date %>
+		<!-- booking time -->
+		<%= b.label :time, "#{ Booking.human_attribute_name :time } *" %>
+		<span class="select">
+		<%= b.time_select :time, :minute_step => 15 %>
+		</span>
+		<!-- booking people -->
+		<%= b.label :people_number, "#{ Booking.human_attribute_name :people_number }*" %>
+		<span class="select">
+			<%= b.select :people_number, 2..10 %>
+		</span>
+		<!-- client name-->
+		<%= b.label :name, "#{Booking.human_attribute_name :name} *" %>
+		<%= b.text_field :name %>
+		<%#= b.error_messages_on :name %>
+		<!-- surname1 -->
+		<%= b.label :surname1, "#{ Booking.human_attribute_name :surname1 } *" %>
+		<%= b.text_field :surname1 %>
+		<!-- surname2 -->
+		<%= b.label :surname2, Booking.human_attribute_name( :surname2 ) %>
+		<%= b.text_field :surname2 %>
+		<!-- phone -->
+		<%= b.label :phone, "#{Booking.human_attribute_name :phone} *" %>
+		<%= b.text_field :phone %>
+		<!-- email -->
+		<%= b.label :email, "#{ Booking.human_attribute_name :email } *" %>
+		<%= b.text_field :email %>
+		<button type="submit">Reservar</button>
+		<div class="spacer"></div>
 	<% end %>
 </div>

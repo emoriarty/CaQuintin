@@ -10,15 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110529143324) do
+ActiveRecord::Schema.define(:version => 20110606180246) do
 
   create_table "bookings", :force => true do |t|
     t.integer  "people_number"
-    t.date     "date"
+    t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "client_id"
     t.time     "time"
+    t.string   "name",          :limit => 50
+    t.string   "surname1",      :limit => 100
+    t.string   "surname2",      :limit => 100
+    t.string   "email",         :limit => 200
+    t.string   "phone",         :limit => 13
   end
 
   create_table "people", :force => true do |t|

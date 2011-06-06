@@ -29,12 +29,12 @@
 				<% @bookings.each do |booking| %>
 					<tr class="<%= %>">
 						<td><%= check_box_tag( :class => "checkbox toggle" ) %></td>
-						<td><%= booking.date %></td>
-						<td><%= booking.time %></td>
-						<td><%= booking.client ? booking.client.name : "---" %></td>
-						<td><%= booking.client ? booking.client.surname1 : "---" %></td>
-						<td><%= booking.client ? booking.client.mobile : "---" %></td>
-						<td><%= booking.client ? booking.client.email : "---" %></td>
+						<td><%= l booking.date %></td>
+						<td><%= l booking.time, :format => :list %></td>
+						<td><%= booking.name || "---" %></td>
+						<td><%= booking.surname1 || "---" %></td>
+						<td><%= booking.phone || "---" %></td>
+						<td><%= booking.email || "---" %></td>
 					</tr>
 				<% end %>
 				</tbody>

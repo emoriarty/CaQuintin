@@ -16,6 +16,7 @@
       default: "%d/%m/%Y"
       short: "%d de %b"
       long: "%d de %B de %Y"
+      list: "%d/%m/%Y"
 
     day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
     abbr_day_names: [Dom, Lun, Mar, Mie, Jue, Vie, Sab]
@@ -32,6 +33,7 @@
       default: "%A, %d de %B de %Y %H:%M:%S %z"
       short: "%d de %b %H:%M"
       long: "%d de %B de %Y %H:%M"
+      list: "%H:%M"
     am: "am"
     pm: "pm"
 
@@ -185,6 +187,11 @@
         people_number: 'número de personas'
         date: 'fecha'
         time: 'hora'
+        name: 'nombre'
+        surname1: '1º apellido'
+        surname2: '2º apellido'
+        email: 'correo electrónico'
+        phone: 'teléfono fijo'
       client:
         client: 'cliente'
         name: 'nombre'

@@ -22,9 +22,6 @@
 
 class Client < Person
   attr_accessible :name, :surname1, :surname2, :email, :phone, :mobile
-  has_many :bookings
-  
-  accepts_nested_attributes_for :bookings
   
   validates :phone,
     :length => { :minimum => 9, :maximum => 12 },
