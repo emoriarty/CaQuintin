@@ -19,10 +19,101 @@
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  user_id: 
-  people_number: 
+one: 
+  people_number: 2
+  date: 10/08/2011 
+  time: 13:00
+  name: Enrique
+  surname1: Arias
+  email: enrique.arias.cervero@gmail.com
+  phone: 987654321
 
 two:
-  user_id: 
-  people_number: 
+  people_number: 2
+  date: 12/08/2011 
+  time: 14:00
+  name: Hipólito
+  surname1: Arias
+  email: lito.arias.cervero@gmail.com
+  phone: 987654321 
+
+three:
+  people_number: 3
+  date: 13/08/2011 
+  time: 15:00
+  name: Julie
+  surname1: Guiraud
+  email: gjulia@gmail.com
+  phone: 987654321
+  
+four:
+  people_number: 6
+  date: 14/08/2011 
+  time: 21:00
+  name: cuatro
+  surname1: cuarto
+  email: cuatro@gmail.com
+  phone: 987654321
+
+five:
+  people_number: 2
+  date: 15/08/2011 
+  time: 13:00
+  name: cinco
+  surname1: quinto
+  email: cinco@gmail.com
+  phone: 987654321
+
+six:
+  people_number: 2
+  date: 16/08/2011 
+  time: 13:00
+  name: seis
+  surname1: sexto
+  email: seis@gmail.com
+  phone: 987654321
+
+seven:
+  people_number: 2
+  date: 17/08/2011 
+  time: 13:00
+  name: siete
+  surname1: septimo
+  email: siete@gmail.com
+  phone: 987654321
+
+eight:
+  people_number: 2
+  date: 18/08/2011 
+  time: 13:00
+  name: ocho
+  surname1: octavo
+  email: ocho@gmail.com
+  phone: 987654321
+
+nine:
+  people_number: 2
+  date: 19/08/2011 
+  time: 13:00
+  name: nueve
+  surname1: noveno
+  email: nueve@gmail.com
+  phone: 987654321
+  
+ten:
+  people_number: 2
+  date: 10/08/2011 
+  time: 13:00
+  name: diez
+  surname1: decimo
+  email: diez@gmail.com
+  phone: 987654321
+  
+eleven:
+  people_number: 2
+  date: 10/08/2011 
+  time: 13:00
+  name: once
+  surname1: onceavo
+  email: once@gmail.com
+  phone: 987654321
