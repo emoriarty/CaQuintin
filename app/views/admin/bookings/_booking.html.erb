@@ -1,0 +1,9 @@
+<tr class="<%= %>">
+	<td><%= check_box_tag( :class => "checkbox toggle" ) %></td>
+	<td><%= l booking.date %></td>
+	<td><%= l booking.time, :format => :list %></td>
+	<td><%= booking.name || "---" %></td>
+	<td><%= booking.surname1 || "---" %></td>
+	<td><%= booking.phone || "---" %></td>
+	<td><%= booking.email || "---" %></td>
+</tr>

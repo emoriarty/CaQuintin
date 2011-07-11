@@ -1,0 +1,47 @@
+<% content_for :content do %>
+	<div class="block" id="block-tables">
+		<div class="secondary-navigation">
+			<ul class="wat-cf activate">
+				<%= yield :booking_options %>
+			</ul>
+		</div>
+		<div class="content">
+			<h2>Reservas</h2>
+			<div class="inner">
+				<table class="table">
+					<tbody>
+						<tr>
+							<th class="first"><%= check_box_tag( :class => "checkbox toggle" ) %></th>
+							<th><%= I18n.t("admin.tables.bookings.date") %></th>
+							<th><%= I18n.t("admin.tables.bookings.time") %></th>
+							<th><%= I18n.t("admin.tables.bookings.name") %></th>
+							<th><%= I18n.t("admin.tables.bookings.surname") %></th>
+							<th><%= I18n.t("admin.tables.bookings.mobile") %></th>
+							<th><%= I18n.t("admin.tables.bookings.email") %></th>
+						</tr>
+						<%= yield %>
+					</tbody>
+				</table>
+				<div class="actions-bar wat-cf">
+					<div class="actions">
+						<button class="button">
+							<%= image_tag "admin/icons/cross.png" %><%= I18n.t("admin.delete").capitalize %>
+						</button>
+					</div>
+
+					<%= paginate @bookings %>
+				</div>
+			</div>
+		</div>	
+	</div>
+<% end %>
+
+<% content_for :sidebar do %>
+	<div id="sidebar">
+		<div class="block">
+			<h3>Más opciones</h3>
+		</div>
+	</div>
+<% end %>
+
+<%= render :template => 'layouts/admin/admin' %>

@@ -1,0 +1,66 @@
+<div class="block" id="block-tables">
+	<div class="secondary-navigation">
+		<ul class="wat-cf activate">
+			<li class="active first">
+				<a href="#">Pendientes</a>
+			</li>
+			<li class="">
+				<a href="#">Todas</a>
+			</li>
+			<li>
+				<a href="#">Pasadas</a>
+			</li>
+		</ul>
+	</div>
+	<div class="content">
+		<h2>Reservas</h2>
+		<ul class="wat-cf activate">
+			<li><% link_to 'Hoy', admin_bookings %></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<div class="inner">
+			<table class="table">
+				<tbody>
+					<tr>
+						<th class="first"><%= check_box_tag( :class => "checkbox toggle" ) %></th>
+						<th><%= I18n.t("admin.tables.bookings.date") %></th>
+						<th><%= I18n.t("admin.tables.bookings.time") %></th>
+						<th><%= I18n.t("admin.tables.bookings.name") %></th>
+						<th><%= I18n.t("admin.tables.bookings.surname") %></th>
+						<th><%= I18n.t("admin.tables.bookings.mobile") %></th>
+						<th><%= I18n.t("admin.tables.bookings.email") %></th>
+					</tr>
+				<% @bookings.each do |booking| %>
+					<tr class="<%= %>">
+						<td><%= check_box_tag( :class => "checkbox toggle" ) %></td>
+						<td><%= l booking.date %></td>
+						<td><%= l booking.time, :format => :list %></td>
+						<td><%= booking.name || "---" %></td>
+						<td><%= booking.surname1 || "---" %></td>
+						<td><%= booking.phone || "---" %></td>
+						<td><%= booking.email || "---" %></td>
+					</tr>
+				<% end %>
+				</tbody>
+			</table>
+			<div class="actions-bar wat-cf">
+				<div class="actions">
+					<button class="button">
+						<%= image_tag "admin/icons/cross.png" %><%= I18n.t("admin.delete").capitalize %>
+					</button>
+				</div>
+
+				<%= paginate @bookings %>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<% content_for :sidebar do %>
+	<div id="sidebar">
+		<div class="block">
+			<h3>Más opciones</h3>
+		</div>
+	</div>
+<% end %>
