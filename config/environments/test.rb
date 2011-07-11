@@ -32,4 +32,7 @@ CaQuintin::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+  
+  #url root for images, and the rest of resources
+  config.action_controller.asset_host = "http://localhost:3000"
 end

@@ -18,9 +18,13 @@
 #
 
 class Booking < ActiveRecord::Base
+  #attr_accessor :people_number, :time, :client, :name, :surname1, :surname2, :email, :phone
   attr_accessible :people_number, :date, :time, :client, :name, :surname1, :surname2, :email, :phone
-
+  
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  PHONE_REGEX = /^((?![A-za-z]).)*$/
+  
+  after_save :format_date_to_db
   
   validates :people_number,
     :presence => true,
@@ -31,7 +35,7 @@ class Booking < ActiveRecord::Base
   
   validates :phone, :presence => true,
     :length => { :minimum => 9, :maximum => 12 },
-    :allow_blank => true
+    :format => { :with => PHONE_REGEX }
 
   validates :email, :presence => true,
     :format => { :with => EMAIL_REGEX }
@@ -46,7 +50,24 @@ class Booking < ActiveRecord::Base
     :length => { :maximum => 75 },
     :allow_blank => true
   
+  
   def date
     @attributes['date'].blank? ? nil : @attributes['date'].to_date
+  end
+  
+  def format_date_to_db
+    @attributes['date'] = @attributes['date'].to_date.strftime("%Y/%m/%d")
+  end
+  
+  def self.pending
+    order(:date, :time).where("date >= ?", Date.today.strftime('%Y/%m/%d'))
+  end
+  
+  def self.today
+    order(:time).where(:date => Date.today)
+  end
+  
+  def self.tomorrow
+    order(:time).where(:date => Date.tomorrow)
   end
 end

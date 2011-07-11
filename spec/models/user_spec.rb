@@ -40,9 +40,9 @@ describe User do
   end
   
   #surname2 validations
-  it "should require a surname1" do
+  it "should not require a surname2" do
     no_surname2_user = User.new(@attr.merge(:surname2 => ""))
-    no_surname2_user.should_not be_valid
+    no_surname2_user.should be_valid
   end
   
   it "should rejects surname2 that are too long" do

@@ -1,11 +1,21 @@
 CaQuintin::Application.routes.draw do
   
   namespace :admin do
-    resources :bookings, :users
+    resources :bookings do
+      collection do
+         get :today
+         get :tomorrow
+         get :pendings 
+         get :past
+         get :all
+      end
+    end
+    resources :users 
+    resources :dashboard, :only => [:index]
     resources :sessions, :only => [:new, :create, :destroy]
   end
   
-  match "admin", :to => "admin/users#index"
+  match "admin", :to => "admin/dashboard#index"
   match 'admin/login', :to => "admin/sessions#new"
   match 'admin/logout', :to => "admin/sessions#destroy"
     

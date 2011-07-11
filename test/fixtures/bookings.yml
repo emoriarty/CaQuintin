@@ -21,8 +21,8 @@
 
 one: 
   people_number: 2
-  date: 10/08/2011 
-  time: 13:00
+  date: 2011/11/08
+  time: "13:00"
   name: Enrique
   surname1: Arias
   email: enrique.arias.cervero@gmail.com
@@ -30,8 +30,8 @@ one:
 
 two:
   people_number: 2
-  date: 12/08/2011 
-  time: 14:00
+  date: 2011/08/12
+  time: "14:00"
   name: Hipólito
   surname1: Arias
   email: lito.arias.cervero@gmail.com
@@ -39,8 +39,8 @@ two:
 
 three:
   people_number: 3
-  date: 13/08/2011 
-  time: 15:00
+  date: 2011/08/13
+  time: "15:00"
   name: Julie
   surname1: Guiraud
   email: gjulia@gmail.com
@@ -48,8 +48,8 @@ three:
   
 four:
   people_number: 6
-  date: 14/08/2011 
-  time: 21:00
+  date: 2011/08/14 
+  time: "21:00"
   name: cuatro
   surname1: cuarto
   email: cuatro@gmail.com
@@ -57,8 +57,8 @@ four:
 
 five:
   people_number: 2
-  date: 15/08/2011 
-  time: 13:00
+  date: 2011/05/15
+  time: "13:00"
   name: cinco
   surname1: quinto
   email: cinco@gmail.com
@@ -66,8 +66,8 @@ five:
 
 six:
   people_number: 2
-  date: 16/08/2011 
-  time: 13:00
+  date: 2011/08/16
+  time: "13:00"
   name: seis
   surname1: sexto
   email: seis@gmail.com
@@ -75,8 +75,8 @@ six:
 
 seven:
   people_number: 2
-  date: 17/08/2011 
-  time: 13:00
+  date: 2011/07/17
+  time: "13:00"
   name: siete
   surname1: septimo
   email: siete@gmail.com
@@ -84,8 +84,8 @@ seven:
 
 eight:
   people_number: 2
-  date: 18/08/2011 
-  time: 13:00
+  date: 2011/08/18 
+  time: "13:00"
   name: ocho
   surname1: octavo
   email: ocho@gmail.com
@@ -93,8 +93,8 @@ eight:
 
 nine:
   people_number: 2
-  date: 19/08/2011 
-  time: 13:00
+  date: 2011/08/19
+  time: "13:00"
   name: nueve
   surname1: noveno
   email: nueve@gmail.com
@@ -102,8 +102,8 @@ nine:
   
 ten:
   people_number: 2
-  date: 10/08/2011 
-  time: 13:00
+  date: 2011/08/10
+  time: "13:00"
   name: diez
   surname1: decimo
   email: diez@gmail.com
@@ -111,8 +111,8 @@ ten:
   
 eleven:
   people_number: 2
-  date: 10/08/2011 
-  time: 13:00
+  date: 2011/06/01 
+  time: "13:00"
   name: once
   surname1: onceavo
   email: once@gmail.com

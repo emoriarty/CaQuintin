@@ -11,7 +11,7 @@ class Admin::SessionsController < ApplicationController
       render 'new'
     else
       sign_in user
-      redirect_to admin_users_url
+      redirect_to admin_dashboard_index_path
     end
   end
   

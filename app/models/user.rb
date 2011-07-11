@@ -29,10 +29,11 @@ class User < Person
     :presence => true,
     :confirmation => true,
     :length       => { :within => 6..40 }
+    
   validates :nick, 
     :presence => true,
     :length => { :maximum => 25 },
-    :uniqueness => { :case_sensitive => false }
+    :uniqueness => { :case_sensitive => false } 
     
   before_save :encrypt_password
   
@@ -49,6 +50,10 @@ class User < Person
   def self.authenticate_with_salt(id, cookie_salt)
     user = find_by_id(id)
     (user && user.salt == cookie_salt) ? user : nil
+  end
+  
+  def self.generate_salt(password)
+    self.make_salt password
   end
   
   private

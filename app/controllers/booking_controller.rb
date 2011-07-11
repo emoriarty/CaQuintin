@@ -5,8 +5,7 @@ class BookingController < ApplicationController
   
   def create
     begin
-      @booking = Booking.new
-      @booking.attributes = params[:booking]
+      @booking = Booking.new params[:booking]
       @booking.save!
     rescue ArgumentError => ae
       logger.error(ae)
@@ -14,8 +13,6 @@ class BookingController < ApplicationController
       render :index
     rescue ActiveRecord::ActiveRecordError => e
       logger.error(e)
-      logger.error(@booking)
-      logger.error(@booking.errors)
       render :index
     else
       flash[:success] = I18n.t "booking.messages.succes"

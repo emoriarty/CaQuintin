@@ -25,9 +25,14 @@ class Person < ActiveRecord::Base
   
   validates :name, :presence => true,
     :length => { :maximum => 50 }
+  
   validates :surname1, :presence => true,
     :length => { :maximum => 75 }          
+  
   validates :surname2,
     :length => { :maximum => 75 },
     :allow_blank => true
+  
+  validates :email, :presence => true,
+    :format => { :with => EMAIL_REGEX }
 end

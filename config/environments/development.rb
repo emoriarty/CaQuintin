@@ -22,5 +22,8 @@ CaQuintin::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+  
+  #url root for images, and the rest of resources
+  config.action_controller.asset_host = "http://localhost:3000"
 end
 
