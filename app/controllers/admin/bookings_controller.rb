@@ -3,25 +3,50 @@ class Admin::BookingsController < ApplicationController
   
   respond_to :html
   
+  #after_filter :response, :except => [:index]
+  
   def index
-    redirect_to :today_admin_bookings_path
+    logger.debug "Dentro de index"
+    redirect_to today_admin_bookings_path
   end
   
   def today
-    respond_with @bookings = Booking.today.page(params[:page]).per(10)
+    logger.debug "Dentro de today"
+    @bookings = Booking.today.page(params[:page]).per(10)
+    respond_with @bookings do |format|
+      format.html{render "bookings"}
+    end
   end
   
   def tomorrow
-    respond_with @bookings = Booking.tomorrow.page(params[:page]).per(10)
+    @bookings = Booking.tomorrow.page(params[:page]).per(10)
+    respond_with @bookings do |format|
+      format.html{render "bookings"}
+    end
   end
   
   def pendings
-    respond_with @bookings = Booking.pending.page(params[:page]).per(10)
+    @bookings = Booking.pending.page(params[:page]).per(10)
+    respond_with @bookings do |format|
+      format.html{render "bookings"}
+    end
   end
   
-  def past
+  def old
+    @bookings = Booking.old.page(params[:page]).per(10)
+    respond_with @bookings do |format|
+      format.html{render "bookings"}
+    end
   end
   
   def all
+    @bookings = Booking.all.page(params[:page]).per(10)
+    respond_with @bookings do |format|
+      format.html{render "bookings"}
+    end
+  end
+  
+  def destroy
+    
   end
 end

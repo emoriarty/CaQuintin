@@ -70,4 +70,12 @@ class Booking < ActiveRecord::Base
   def self.tomorrow
     order(:time).where(:date => Date.tomorrow)
   end
+  
+  def self.old
+    order(:time).where("date < ?", Date.today)
+  end
+  
+  def self.all
+    order(:date)
+  end
 end

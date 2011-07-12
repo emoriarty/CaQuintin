@@ -1,15 +1,15 @@
 <li class="first <%= 'active' if(params[:action] == 'today') %>">
 	<%= link_to 'Hoy', today_admin_bookings_path %>
 </li>
-<li class="">
+<li class="<%= 'active' if(params[:action] == 'tomorrow') %>">
 	<%= link_to 'Mañana', tomorrow_admin_bookings_path %>
 </li>
 <li class="<%= 'active' if(params[:action] == 'pendings') %>">
 	<%= link_to 'Pendientes', pendings_admin_bookings_path %>
 </li>
-<li class="">
-	<%= link_to 'Pasadas', past_admin_bookings_path %>
+<li class="<%= 'active' if(params[:action] == 'old') %>">
+	<%= link_to 'Pasadas', old_admin_bookings_path %>
 </li>
-<li>
+<li class="<%= 'active' if(params[:action] == 'all') %>">
 	<%= link_to 'Todas', all_admin_bookings_path %>
 </li>

@@ -6,7 +6,7 @@ CaQuintin::Application.routes.draw do
          get :today
          get :tomorrow
          get :pendings 
-         get :past
+         get :old
          get :all
       end
     end
