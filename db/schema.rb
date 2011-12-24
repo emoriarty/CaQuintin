@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -14,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20110529143324) do
 
   create_table "bookings", :force => true do |t|
     t.integer  "people_number"
-    t.date     "date"
+    t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "client_id"
@@ -36,5 +37,7 @@ ActiveRecord::Schema.define(:version => 20110529143324) do
     t.datetime "updated_at"
     t.string   "encrypted_password"
   end
+
+  add_index "people", ["email"], :name => "index_people_on_email", :unique => true
 
 end

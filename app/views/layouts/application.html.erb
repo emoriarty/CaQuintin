@@ -3,137 +3,63 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>Ca Quintín</title>
-  <%= stylesheet_link_tag "style" %>
-	<%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/themes/smoothness/jquery-ui.css" %>
-	<%#= javascript_include_tag :all, :recursive => true %>
-	<%#= javascript_include_tag "jquery-1.4.min" %>
-	<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js",
-		 "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js" %>
-	<%= javascript_include_tag "http://jquery-ui.googlecode.com/svn/trunk/ui/i18n/jquery.ui.datepicker-es.js" %>
-	<%= javascript_include_tag "application" %>
-	<%= javascript_include_tag "loopedslider.min" %>
-	<%= javascript_include_tag "prototype" %>
+  <%= stylesheet_link_tag "computer" %>
+	<%= yield :stylesheets_links %>
   <%= csrf_meta_tag %>
+	<%= javascript_include_tag 'application' %>
+	<%= yield :javascripts_links %>
 </head>
 <body>
-	<!-- Title -->
-	<div id="topbanner">
-		<h1 id="sitename">
-				Ca Quintín
-				<span>restaurant</span>
-		</h1>
-	</div>
-	<!-- Carousel -->
-	<div id="wrap">
-		<div id="header">
-			<div id="slider">	
-				<div class="container">
-					<ul class="slides">
-						<li>
-							<div class="thumbholder">
-								<img src="images/slide1.jpg" width="625" height="254" alt="First Image" /></div>
-								<div class="txtholder">
-		            	<h2>Slide Title</h2>
-		            	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-								</div>
-						</li>
-		        <li>
-							<div class="thumbholder">
-								<img src="images/slide2.jpg" width="625" height="254" alt="First Image" /></div>
-								<div class="txtholder">
-		            	<h2>Slide Title</h2>
-		          		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-								</div>
-						</li>
-		        <li>
-							<div class="thumbholder">
-								<img src="images/slide1.jpg" width="625" height="254" alt="First Image" />
-							</div>
-							<div class="txtholder">
-		            <h2>Slide Title</h2>
-		          	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-							</div>
-						</li>
-		        <li>
-							<div class="thumbholder">
-								<img src="images/slide2.jpg" width="625" height="254" alt="First Image" />
-							</div>
-		          <div class="txtholder">
-		            <h2>Slide Title</h2>
-		            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<ul class="pagination">
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-				</ul>	
-			</div>
-		</div>
-		<!-- Menu -->
-		<div id="menu">
-			<ul>
-				<li <%= 'class=active' if WelcomeController.name.underscore.start_with? params[:controller] %>>
-					<%= link_to 'Home' , root_path %>
-				</li>
-				<li <%= 'class=active' if CuisineController.name.underscore.start_with? params[:controller]  %>>
-					<%= link_to (I18n.t "menu.cuisine").capitalize , :controller => :cuisine %>
-				</li>
-				<li>
-					<a href="#"><%= (I18n.t "menu.blog").capitalize %></a>
-				</li>
-				<li <%= 'class=active' if BookingController.name.underscore.start_with? params[:controller]  %>>
-					<%= link_to (I18n.t "menu.bookings").capitalize, booking_index_path %>
-				</li>
-				<li <%= 'class=active' if MapController.name.underscore.start_with? params[:controller]  %>>
-					<%= link_to (I18n.t "menu.map").capitalize, :controller => :map %>
-				</li>
-				<li <%= 'class=active' if AboutController.name.underscore.start_with? params[:controller]  %>>
-					<%= link_to (I18n.t "menu.about").capitalize, :controller => :about %>
-				</li>
-				<li <%= 'class=active' if ContactController.name.underscore.start_with? params[:controller]  %>>
-					<%= link_to (I18n.t "menu.contact").capitalize, :controller => :contact %>
-				</li>
-			</ul>
-		</div>
-		<% if CuisineController.name.underscore.start_with? params[:controller] %>
-			<!--Submenu--> 
-			<div id="submenu">
+	<!-- HEADER -->
+	<header>
+		<div class="container_12">
+			<h1 class="grid_3 suffix_1">
+					Ca Quintín
+					<span>Restaurant</span>
+			</h1>
+			<nav class="grid_8">
 				<ul>
-					<li><a href="#">Entrantes</a></li>
-					<li><a href="#">Carnes</a></li>
-					<li><a href="#">Pescados</a></li>
-					<li><a href="#">Arroces</a></li>
-					<li><a href="#">Vinos</a></li>
-					<li class="last"><a href="#">Postres</a></li>
+					<li>
+						<%= link_to 'Home' , root_path, class: ('active' if WelcomeController.name.underscore.start_with? params[:controller]) %>
+					</li>
+					<li>
+						<%= link_to (I18n.t "menu.cuisine").capitalize , controller: :cuisine, class: ('active' if CuisineController.name.underscore.start_with? params[:controller]) %>
+					</li>
+					<li>
+						<%= link_to (I18n.t "menu.bookings").capitalize, booking_index_path, class: ('active' if BookingController.name.underscore.start_with? params[:controller]) %>
+					</li>
+					<li>
+						<%= link_to (I18n.t "menu.map").capitalize, controller: :map, class: ('active' if MapController.name.underscore.start_with? params[:controller]) %>
+					</li>
+					<li>
+						<%= link_to (I18n.t "menu.about").capitalize, controller: :about, class: ('active' if AboutController.name.underscore.start_with? params[:controller]) %>
+					</li>
+					<li>
+						<%= link_to (I18n.t "menu.contact").capitalize, controller: :contact, class: ('active' if ContactController.name.underscore.start_with? params[:controller])	 %>
+					</li>
 				</ul>
-			</div>
-		<% end %>
-		<div id="content">
-			
-			<%= yield %>
-			
+			</nav>
 		</div>
-	</div>
-		
-	<div id="footer">
-			&copy; YourCompanyName.com | all Rights Reserved
-			<span class="credit"><a href="http://www.cssheaven.org">Free CSS Template</a> by CSSHeaven</span>
-		</div>
-		<%= debug(params) if Rails.env.development? %>
-	</div>
-	<script type="text/javascript" charset="utf-8">
-		jQuery(function(){
-			jQuery('#slider').loopedSlider({
-				autoStart: 3500,
-				restart: 5000
-			});
+	</header>
 
-		});
-	</script>
+	<div id="wrapper" class="container_12">
+	  <% flash.each do |type, message| -%>
+			<div class="flash prefix_2 grid_8 suffix_2">
+	      <div class="message <%= type %>">
+	        <p><%= message %></p>
+	      </div>
+	  	</div>
+			<div class="clear"></div>
+		<% end %>
+		
+		<%= content_for?(:content) ? yield(:content) : yield %>
+		<%= yield :sidebar %>
+  </div>
 	
+	<div class="container_12">
+		<footer class="grid_12">
+				<p class="copyright">&copy; CaQuintin | tots el drets reservats</p>
+		</footer>
+	</div>
 </body>
 </html>

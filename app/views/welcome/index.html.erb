@@ -1,30 +1,93 @@
-<!--div id="maincontent"-->
-<div class="left">
-	<h2>Welcome To Our Restaurant</h2>
-	<img src="images/imagesample2.jpg" width="250" height="150" alt="imag" class="leftalign" />
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu nisl sed tellus porttitor vehicula sit amet nec tellus. Nulla nec nulla vitae magna varius elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean eget tempor velit. Sed in aliquet leo. Quisque id nisl non ligula molestie aliquam nec in sapien. Integer adipiscing feugiat fringilla. </p>
-	<p>Integer vel condimentum purus. Vivamus imperdiet scelerisque nisi luctus ornare. Etiam ac mi ipsum, ut vehicula magna. Donec id nunc nec mi suscipit tempus faucibus a dolor. Pellentesque sit amet ipsum a elit malesuada mattis quis vel arcu. Fusce posuere, mi a convallis placerat, erat ligula rutrum nisi, a fringilla neque nunc eu sapien. Donec nulla quam, ultrices ut lobortis nec, facilisis nec est. Sed vel sapien sem, quis imperdiet risus. Proin posuere, eros ut semper imperdiet, mauris mauris hendrerit nisl, vel scelerisque urna urna non risus. Cras nunc turpis, mollis sit amet convallis eget, lobortis at urna. </p>
+<% content_for :stylesheets_links do %>
+	<%= stylesheet_link_tag 'home' %>
+<% end %>
+
+<% content_for :javascripts_links do %>
+	<%= javascript_include_tag 'home/slider' %>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			simpleSlide({
+					'set_speed': 500,
+					'status_width': 20,
+			    'status_color_outside': '#aaa',
+			    'status_color_inside': '#fff',
+				}
+			);
+		});
+	</script>
+<% end %>
+
+<div class="grid_12">
+	<div class="simpleSlide-window" rel="1">
+		<div class="simpleSlide-tray" rel="1">
+	  	<div class="simpleSlide-slide" rel="1" alt="1">
+				<div class="content">
+	    		<%= image_tag 'slide1.jpg' %>
+					<h1>Título Slide</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu nisl sed tellus porttitor vehicula sit amet nec tellus</p>
+					<ul>
+						<li><%= link_to '', '#', class: 'jump-to active', rel: '1', alt: '1' %></li>
+						<li><%= link_to '', '#', class: 'jump-to', rel: '1', alt: '2' %></li>
+						<li><%= link_to '', '#', class: 'jump-to', rel: '1', alt: '3' %></li>
+						<li><%= link_to '', '#', class: 'jump-to', rel: '1', alt: '4' %></li>
+					</ul>
+				</div>
+	    </div>
+			<div class="simpleSlide-slide" rel="1" alt="2">
+				<div class="content">
+	    		<%= image_tag 'slide2.jpg' %>
+					<h1>Título Slide 2</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu nisl sed tellus porttitor vehicula sit amet nec tellus</p>
+					<ul>
+						<li><%= link_to '', '#', class: 'jump-to', rel: '1', alt: '1' %></li>
+						<li><%= link_to '', '#', class: 'jump-to active', rel: '1', alt: '2' %></li>
+						<li><%= link_to '', '#', class: 'jump-to', rel: '1', alt: '3' %></li>
+						<li><%= link_to '', '#', class: 'jump-to', rel: '1', alt: '4' %></li>
+					</ul>
+				</div>
+	    </div>
+			<div class="simpleSlide-slide" rel="1" alt="3">
+				<div class="content">
+	    		<%= image_tag 'slide1.jpg' %>
+					<h1>Título Slide 3</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu nisl sed tellus porttitor vehicula sit amet nec tellus</p>
+					<ul>
+						<li><%= link_to '', '#', class: 'jump-to', rel: '1', alt: '1' %></li>
+						<li><%= link_to '', '#', class: 'jump-to', rel: '1', alt: '2' %></li>
+						<li><%= link_to '', '#', class: 'jump-to active', rel: '1', alt: '3' %></li>
+						<li><%= link_to '', '#', class: 'jump-to', rel: '1', alt: '4' %></li>
+					</ul>
+				</div>
+	    </div>
+			<div class="simpleSlide-slide" rel="1" alt="4">
+				<div class="content">
+	    		<%= image_tag 'slide2.jpg' %>
+					<h1>Título Slide 4</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu nisl sed tellus porttitor vehicula sit amet nec tellus</p>
+					<ul>
+						<li><%= link_to '', '#', class: 'jump-to', rel: '1', alt: '1' %></li>
+						<li><%= link_to '', '#', class: 'jump-to', rel: '1', alt: '2' %></li>
+						<li><%= link_to '', '#', class: 'jump-to', rel: '1', alt: '3' %></li>
+						<li><%= link_to '', '#', class: 'jump-to active', rel: '1', alt: '4' %></li>
+					</ul>
+				</div>
+	    </div>
+		</div>
+	</div>
 </div>
-<div class="right">
-	<h2>About Us</h2>
-	<p><img src="images/imagesample2.jpg" width="250" height="150" alt="rightalign" class="rightalign" />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu nisl sed tellus porttitor vehicula sit amet nec tellus. Nulla nec nulla vitae magna varius elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean eget tempor velit. Sed in aliquet leo. Quisque id nisl non ligula molestie aliquam nec in sapien. Integer adipiscing feugiat fringilla. </p>
+<div class="clear"></div>
+<article class="grid_6">
+	<h2>Lorem ipsum dolor sit amet</h2>
+	<%= image_tag 'plato-paella.jpg', class: "fl_l" %>
+	<p>Aenean eu nisl sed tellus porttitor vehicula sit amet nec tellus. Nulla nec nulla vitae magna varius elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean eget tempor velit. Sed in aliquet leo. Quisque id nisl non ligula molestie aliquam nec in sapien. Integer adipiscing feugiat fringilla. </p>
 	<p>Integer vel condimentum purus. Vivamus imperdiet scelerisque nisi luctus ornare. Etiam ac mi ipsum, ut vehicula magna. Donec id nunc nec mi suscipit tempus faucibus a dolor. Pellentesque sit amet ipsum a elit malesuada mattis quis vel arcu. Fusce posuere, mi a convallis placerat, erat ligula rutrum nisi, a fringilla neque nunc eu sapien. Donec nulla quam, ultrices ut lobortis nec, facilisis nec est. Sed vel sapien sem, quis imperdiet risus. Proin posuere, eros ut semper imperdiet, mauris mauris hendrerit nisl, vel scelerisque urna urna non risus. Cras nunc turpis, mollis sit amet convallis eget, lobortis at urna. </p>
-</div>
+</article>
 
+<article class="grid_6">
+	<h2>Lorem ipsum dolor sit amet</h2>
+	<%= image_tag 'suquet-peix.jpg', class: "fl_r" %>
+	<p>Aenean eu nisl sed tellus porttitor vehicula sit amet nec tellus. Nulla nec nulla vitae magna varius elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean eget tempor velit. Sed in aliquet leo. Quisque id nisl non ligula molestie aliquam nec in sapien. Integer adipiscing feugiat fringilla. </p>
+	<p>Integer vel condimentum purus. Vivamus imperdiet scelerisque nisi luctus ornare. Etiam ac mi ipsum, ut vehicula magna. Donec id nunc nec mi suscipit tempus faucibus a dolor. Pellentesque sit amet ipsum a elit malesuada mattis quis vel arcu. Fusce posuere, mi a convallis placerat, erat ligula rutrum nisi, a fringilla neque nunc eu sapien. Donec nulla quam, ultrices ut lobortis nec, facilisis nec est. Sed vel sapien sem, quis imperdiet risus. Proin posuere, eros ut semper imperdiet, mauris mauris hendrerit nisl, vel scelerisque urna urna non risus. Cras nunc turpis, mollis sit amet convallis eget, lobortis at urna. </p>
+</article>
 
-<!--/div-->
-
-<!--div id="sidebar1">
-	<h2 class="subhead">Categories</h2>
-	<ul class="menu">
-		<li><a href="#">Appetizers</a></li>
-		<li><a href="#">Breakfast</a></li>
-		<li><a href="#">Grills &amp; Barbecues</a></li>
-		<li><a href="#">Finger Food</a></li>
-		<li><a href="#">High Tea</a></li>
-		<li><a href="#">Dinner  Parties</a></li>
-		<li><a href="#">Buffet Lunch</a></li>
-		<li><a href="#">Sizzling Dishes</a></li>
-	</ul>
-</div-->
 <div class="clear"></div>
