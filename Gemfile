@@ -3,6 +3,8 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.1'
 gem 'heroku'
 gem 'translate_routes'
+gem 'thin'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,7 +24,6 @@ group :development, :test do
 	gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 	gem 'web-app-theme', '>= 0.6.2'
 	gem 'taps', '>= 0.3.23'
-	gem 'thin'
 	gem 'sqlite3-ruby', :require => 'sqlite3'
 end
 
