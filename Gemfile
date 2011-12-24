@@ -2,7 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
 gem 'heroku'
-gem 'sqlite3'
 gem 'translate_routes'
 
 # Gems used only for assets and not required
@@ -24,8 +23,10 @@ group :development, :test do
 	gem 'web-app-theme', '>= 0.6.2'
 	gem 'taps', '>= 0.3.23'
 	gem 'thin'
+	gem 'sqlite3'
 end
 
 
 group :production do
+	gem 'pg'
 end
