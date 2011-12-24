@@ -50,12 +50,12 @@ img{
 	width: 19px;
 	height: 19px;
 	margin: 3px;
-	background: url(image_path('slidernav.png')) no-repeat;
+	background: url(/assets/slidernav.png) no-repeat;
 	text-indent: -9000px;
 }
 
 .simpleSlide-window li a.active{
-	background:url(image_path('slidernav-active.png')) no-repeat;
+	background:url(/assets/slidernav-active.png) no-repeat;
 }
 
 article h2{
