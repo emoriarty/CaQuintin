@@ -1,6 +1,4 @@
-img{
- border:1px solid #493D3E;
-}
+
 .simpleSlide-window{
 	margin-bottom:30px;
 }
@@ -9,6 +7,19 @@ img{
 	width:940px;
 	font-family:'Georgia';
 	position:relative;
+	background-image: linear-gradient(bottom, rgb(238,234,230) 30%, rgb(255,253,250) 63%);
+	background-image: -o-linear-gradient(bottom, rgb(238,234,230) 30%, rgb(255,253,250) 63%);
+	background-image: -moz-linear-gradient(bottom, rgb(238,234,230) 30%, rgb(255,253,250) 63%);
+	background-image: -webkit-linear-gradient(bottom, rgb(238,234,230) 30%, rgb(255,253,250) 63%);
+	background-image: -ms-linear-gradient(bottom, rgb(238,234,230) 30%, rgb(255,253,250) 63%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.3, rgb(238,234,230)),
+		color-stop(0.63, rgb(255,253,250))
+	);
 }
 
 .simpleSlide-window .content h2{
@@ -72,6 +83,7 @@ article h2{
 article img{
 	width: 250px;
 	height: 150px;
+	border:1px solid #493D3E;
 }
 
 article img.fl_l{
