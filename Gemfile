@@ -23,7 +23,7 @@ group :development, :test do
 	gem 'web-app-theme', '>= 0.6.2'
 	gem 'taps', '>= 0.3.23'
 	gem 'thin'
-	gem 'sqlite3'
+	gem 'sqlite3-ruby', :require => 'sqlite3'
 end
 
 
