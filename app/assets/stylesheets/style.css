@@ -5,12 +5,27 @@ body {
 	font-weight: 300;
 }
 
+/* Utils */
 .fl_l{
 	float:left;
 }
 
 .fl_r{
 	float:right;
+}
+
+/* Commons */
+a{
+	text-decoration:none;
+	color:#493d3e;
+}
+
+a.active{
+	color:#d89936;
+}
+
+a:hover{
+	color:#d89936;
 }
 
 /* HEADER */
@@ -59,18 +74,16 @@ header nav ul li{
 	margin-left:15px;
 }
 
-header nav a{
-	text-decoration:none;
-	color:#493d3e;
+ul.submenu{
+	font-family:'Georgia';
 }
 
-header nav a.active{
-	color:#d89936;
+ul.submenu li{
+	display:inline;
+	list-style-type:none;
+	margin:0 10px;
 }
 
-header nav a:hover{
-	color:#d89936;
-}
 /* Error partial*/
 #errorExplanation{
 	border:1px solid red;

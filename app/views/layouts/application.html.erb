@@ -23,7 +23,7 @@
 						<%= link_to 'Home' , root_path, class: ('active' if WelcomeController.name.underscore.start_with? params[:controller]) %>
 					</li>
 					<li>
-						<%= link_to (I18n.t "menu.cuisine").capitalize , '#', class: ('active' if CuisineController.name.underscore.start_with? params[:controller]) %>
+						<%= link_to (I18n.t "menu.cuisine").capitalize , cuisine_path, class: ('active' if CuisineController.name.underscore.start_with? params[:controller]) %>
 					</li>
 					<li>
 						<%= link_to (I18n.t "menu.bookings").capitalize, '#', class: ('active' if BookingController.name.underscore.start_with? params[:controller]) %>

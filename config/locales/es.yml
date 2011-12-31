@@ -212,7 +212,6 @@
     map: "mapa"
     contact: "contáctanos"
     about: "sobre nosotros"
-
 #booking
   booking:
     messages:
@@ -230,7 +229,14 @@
       people_number: 'número de personas'
     buttons:
       book: 'reservar'
-      
+#cuisine
+  cuisine:
+    starters: entrantes
+    salads: ensaladas
+    meat: carnes
+    fishes: pescados
+    rices: arroces
+    desserts: postres
 #Users
   users: "algo"
   
